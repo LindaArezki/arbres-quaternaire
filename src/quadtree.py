@@ -1,6 +1,8 @@
 from __future__ import annotations
+import json
 
 class QuadTree:
+
     NB_NOEUDS: int = 4
 
     def __init__(self, hg: bool | QuadTree, hd: bool | QuadTree, bd: bool | QuadTree, bg: bool | QuadTree):
@@ -17,9 +19,14 @@ class QuadTree:
         return 1
 
     @staticmethod
-    def fromFile(filename: str) -> QuadTree:
-        """ Open a given file, containing a textual representation of a list"""
-        pass
+    def from_file(filename: str) -> QuadTree:
+        """Ouvre un fichier donnée qui contient la représentation textuelle d'une liste"""
+        with open(filename, "r", encoding="utf-8") as fichier:
+            lire_fichier = fichier.read()
+            elements_quatree = json.loads(lire_fichier)
+            quadtree = QuadTree.fromList(elements_quatree)
+            print(elements_quatree)
+            return quadtree
 
     @staticmethod
     def fromList(data: list) -> QuadTree:
@@ -31,3 +38,4 @@ class TkQuadTree(QuadTree):
     def paint(self):
         """ TK representation of a Quadtree"""
         pass
+
