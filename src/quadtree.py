@@ -24,14 +24,20 @@ class QuadTree:
         with open(filename, "r", encoding="utf-8") as fichier:
             lire_fichier = fichier.read()
             elements_quatree = json.loads(lire_fichier)
-            quadtree = QuadTree.fromList(elements_quatree)
-            print(elements_quatree)
+            quadtree = QuadTree.from_list(elements_quatree)
             return quadtree
 
     @staticmethod
-    def fromList(data: list) -> QuadTree:
-        """ Generates a Quadtree from a list representation"""
-        pass
+    def from_list(data: list) -> QuadTree:
+        """Génère le Quadtree à partir de la liste qui la représente en retournant un objet QuadTree"""
+        haut_a_gauche = data[0]
+        haut_a_droite = data[1]
+        bas_a_droite = data[2]
+        bas_a_gauche = data[3]
+        print("les lignes sont récupérés :  haut à droite = ", haut_a_droite, " bas_a_gauche = ", bas_a_gauche,
+              " haut_a_gauche = ", haut_a_gauche, " bas_a_droitee = ", bas_a_droite)
+        new_quadtree = QuadTree(haut_a_gauche, haut_a_droite, bas_a_droite, bas_a_gauche)
+        return new_quadtree
 
 
 class TkQuadTree(QuadTree):
