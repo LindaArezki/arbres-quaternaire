@@ -1,8 +1,15 @@
 from __future__ import annotations
+
 class QuadTree:
-    NB_NODES : int = 4
-    def __init__(self, hg: bool | QuadTree, hd: bool | QuadTree, bd: bool | QuadTree,bg: bool | QuadTree):
-        pass
+    NB_NOEUDS: int = 4
+
+    def __init__(self, hg: bool | QuadTree, hd: bool | QuadTree, bd: bool | QuadTree, bg: bool | QuadTree):
+        """ Initialisateur d'un objet QuadTree"""
+        self.profondeur = 0
+        self.__hg = hg  # en haut à gauche
+        self.__hd = hd  # en haut à droite
+        self.__bd = bd  # en bas à droite
+        self.__bg = bg  # en bas à gauche
 
     @property
     def depth(self) -> int:
@@ -18,6 +25,7 @@ class QuadTree:
     def fromList(data: list) -> QuadTree:
         """ Generates a Quadtree from a list representation"""
         pass
+
 
 class TkQuadTree(QuadTree):
     def paint(self):
