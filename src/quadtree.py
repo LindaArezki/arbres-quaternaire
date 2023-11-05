@@ -39,6 +39,9 @@ class QuadTree:
         new_quadtree = QuadTree(haut_a_gauche, haut_a_droite, bas_a_droite, bas_a_gauche)
         return new_quadtree
 
+    def __str__(self):
+        """Génère le Quadtree à partir de la liste qui la représente en retournant une liste"""
+        return f"[{self.__hg}, {self.__hd}, {self.__bd}, {self.__bg}]"
 
 class TkQuadTree(QuadTree):
     def paint(self):
