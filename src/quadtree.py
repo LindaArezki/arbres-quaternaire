@@ -15,8 +15,8 @@ class QuadTree:
 
     @property
     def depth(self) -> int:
-        """ Recursion depth of the quadtree"""
-        return 1
+        """Retourne la longueur du QuadTree, le nombre de lignes/noeuds"""
+        return self.profondeur
 
     @staticmethod
     def from_file(filename: str) -> QuadTree:
@@ -24,7 +24,10 @@ class QuadTree:
         with open(filename, "r", encoding="utf-8") as fichier:
             lire_fichier = fichier.read()
             elements_quatree = json.loads(lire_fichier)
+            lignes_quatree = len(lire_fichier.replace("]", "").strip("[").split())
             quadtree = QuadTree.from_list(elements_quatree)
+            quadtree.profondeur = lignes_quatree
+            print(quadtree.profondeur)
             return quadtree
 
     @staticmethod
@@ -34,8 +37,6 @@ class QuadTree:
         haut_a_droite = data[1]
         bas_a_droite = data[2]
         bas_a_gauche = data[3]
-        print("les lignes sont récupérés :  haut à droite = ", haut_a_droite, " bas_a_gauche = ", bas_a_gauche,
-              " haut_a_gauche = ", haut_a_gauche, " bas_a_droitee = ", bas_a_droite)
         new_quadtree = QuadTree(haut_a_gauche, haut_a_droite, bas_a_droite, bas_a_gauche)
         return new_quadtree
 
