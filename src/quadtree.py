@@ -27,7 +27,6 @@ class QuadTree:
             lignes_quatree = len(lire_fichier.replace("]", "").strip("[").split())
             quadtree = QuadTree.from_list(elements_quatree)
             quadtree.profondeur = lignes_quatree
-            print(quadtree.profondeur)
             return quadtree
 
     @staticmethod
