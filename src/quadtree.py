@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json
+import pygame
 
 
 class QuadTree:
@@ -74,7 +75,7 @@ class QuadTree:
         """
              Génère le Quadtree à partir de la liste qui la représente en retournant un objet QuadTree.
                 Parameters:
-                            - data (list): Liste représentant les élements d'un QuadTree.
+                            - data(list): Liste représentant les élements d'un QuadTree.
                 Returns:
                             Un objet QuadTree généré à partir de la liste.
         """
@@ -95,6 +96,25 @@ class QuadTree:
 
 
 class TkQuadTree(QuadTree):
-    def paint(self):
+    def paint():
         """ TK representation of a Quadtree"""
-        pass
+        pygame.init()
+        screen = pygame.display.set_mode((720, 480))
+        pygame.display.set_caption('Quadtree')
+
+        WHITE = pygame.Color(255, 255, 255)
+        GREY = pygame.Color("grey")
+
+        screen.fill(GREY)
+        pygame.draw.rect(screen, WHITE, (40, 70, 77, 77))
+        pygame.draw.rect(screen, (0, 0, 0), (8, 20, 32, 32))
+        pygame.display.update()
+        running = True
+        while running:
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    running = False
+        pygame.quit()
+
+    if __name__ == "__main__":
+        paint()
