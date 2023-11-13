@@ -1,6 +1,7 @@
 from __future__ import annotations
 import json
 
+
 class QuadTree:
     """
         Une classe représentant un Quadtree
@@ -46,8 +47,6 @@ class QuadTree:
     def depth(self) -> int:
         """
             Défini la longueur du QuadTree, le nombre de lignes/noeuds
-                Parameters:
-                           - self : élements du Quadtree.
                 Returns:
                            Une variable du Quadtree.
         """
@@ -89,15 +88,13 @@ class QuadTree:
     def __str__(self):
         """
              Génère le Quadtree à partir de la liste qui la représente en retournant une liste
-                Parameters:
-                            - self : élements du QUADTREE.
                 Returns:
                             La liste de tous les éléments du Quadtree.
         """
         return f"[{self.__hg}, {self.__hd}, {self.__bd}, {self.__bg}]"
 
+
 class TkQuadTree(QuadTree):
     def paint(self):
         """ TK representation of a Quadtree"""
         pass
-
