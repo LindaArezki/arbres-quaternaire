@@ -3,7 +3,7 @@ Dans le cadre de mon bachelor CDA : Concepteur Développeur d'Applications il fa
 
     #Qu'est- ce qu'un QuadTree
         Un quadtree ou arbre quaternaire (arbre Q) est une structure de données de type arbre dans laquelle chaque nœud a quatre fils. Les quadtrees sont le plus souvent utilisés pour partitionner un espace bidimensionnel en le subdivisant          récursivement en quatre nœuds. 
-        ![img.png](files/quadtree.png)
+![img.png](files/quadtree.png)
 
 ## Proposition d'implementation : Arbre quaternaire
     Pour essayer de répondre à cet exercice j'ai procedée par étapes :
